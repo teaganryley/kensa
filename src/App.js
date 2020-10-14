@@ -57,6 +57,7 @@ function Copyright() {
 function App() {
 
   const classes = useStyles();
+  const preventDefault = (event) => event.preventDefault();
   /*
   useEffect(()=>{
     fetch('https://deckofcardsapi.com/api/deck/new/')
@@ -74,13 +75,39 @@ function App() {
     <Container component="main" maxWidth="lg">
       <AppBar position="absolute" color="primary" className={classes.appBar}>
         <Toolbar>
-          <img src={logo} className={classes.toolbarIcon} alt="logo"/>
-          <Link href="" className={classes.toolBarLink} color="inherit">
-            天国
-          </Link>
-          <Link href="" className={classes.toolBarLink} color="inherit">
-            地獄
-          </Link>
+          <Grid 
+            container
+            direction="row"
+            alignItems="center"
+            alignContent="flex-start"
+            className={classes.root}
+          >
+            <Grid item xs={8}>
+              <img src={logo} className={classes.toolbarIcon} alt="logo"/>
+            </Grid>
+            <Grid item xs={2}>
+              <Link 
+                href="" 
+                color="inherit"
+                variant="h6"
+                className={classes.toolBarLink} 
+                onClick={preventDefault}
+              >
+                天国
+              </Link>
+            </Grid>
+            <Grid item xs={2}>
+              <Link
+                href="" 
+                color="inherit"
+                variant="h6"
+                className={classes.toolBarLink} 
+                onClick={preventDefault}
+              >
+                地獄
+              </Link>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
       
@@ -139,6 +166,9 @@ TODO:
   2) Add content to main
   3) heaven and hell links in the header
   4) routing in header
+  5) scaling
+      -maxwidth
+      -header links are closer to right hand
 */
 
 
