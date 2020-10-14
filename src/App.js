@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
   //styles go here
   root: {
     flexGrow: 1,
-    textAlign: 'center'
   },
   toolbarIcon: {
-    marginLeft: theme.spacing(1),
+    //marginLeft: theme.spacing(1),
+
   },
   toolBarLink: {
     //flexGrow: 1,
     //marginRight: theme.spacing(1),
-    padding: theme.spacing,
+    padding: theme.spacing(1),
   },
   paper: {
     marginTop: theme.spacing(15),
@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   paper2: {
     textAlign: 'center',
   },
+  footer: {
+    textAlign: 'center',
+  }
 }));
 
 function Copyright() {
@@ -71,7 +74,7 @@ function App() {
     <Container component="main" maxWidth="lg">
       <AppBar position="absolute" color="primary" className={classes.appBar}>
         <Toolbar>
-          <img src={logo} className={classes.menuIcon} alt="logo"/>
+          <img src={logo} className={classes.toolbarIcon} alt="logo"/>
           <Link href="" className={classes.toolBarLink} color="inherit">
             天国
           </Link>
@@ -87,29 +90,29 @@ function App() {
             <p>
               this is a story about my old pal toni kensa. he knows the freshest squids and
               he don't afraid of anything. one time i waited in line for 69 hours to get a
-              pair of kensa hi-tops. stay of the hook don't get cooked!
+              pair of kensa hi-tops. stay off the hook don't get cooked!
             </p>
           </Grid>
           <Grid item xs={6}>
             <p>
               this is a story about my old pal toni kensa. he knows the freshest squids and
               he don't afraid of anything. one time i waited in line for 69 hours to get a
-              pair of kensa hi-tops. stay of the hook don't get cooked!
+              pair of kensa hi-tops. stay off the hook don't get cooked!
             </p>
           </Grid>
         </Grid>
       </Paper>
       
       <footer>
-        <Grid container className={classes.root}>
+        <Grid container className={classes.footer}>
           <Grid item xs={4}>
             <IconButton href="">
-              <GitHubIcon />
+              <LinkedInIcon />
             </IconButton>
           </Grid>
           <Grid item xs={4}>
             <IconButton href="">
-              <LinkedInIcon />
+              <GitHubIcon />
             </IconButton>
           </Grid>
           <Grid item xs={4}>
