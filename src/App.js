@@ -3,32 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import { Typography } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
 
-import IconButton from '@material-ui/core/IconButton';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import MailOutlineSharpIcon from '@material-ui/icons/MailOutlineSharp';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-
-import logo from './assets/kensa_logo.png';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const useStyles = makeStyles((theme) => ({
-  //styles go here
   root: {
     flexGrow: 1,
-  },
-  toolbarIcon: {
-    //marginLeft: theme.spacing(1),
-
-  },
-  toolBarLink: {
-    //flexGrow: 1,
-    //marginRight: theme.spacing(1),
-    padding: theme.spacing(1),
   },
   paper: {
     marginTop: theme.spacing(15),
@@ -39,25 +21,15 @@ const useStyles = makeStyles((theme) => ({
   paper2: {
     textAlign: 'center',
   },
-  footer: {
-    textAlign: 'center',
-  }
+  paragraph: {
+    //padding: theme.spacing(2),
+    border: 'solid',
+  },
 }));
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {' © 著作権 '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 function App() {
 
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
   /*
   useEffect(()=>{
     fetch('https://deckofcardsapi.com/api/deck/new/')
@@ -73,52 +45,17 @@ function App() {
   //if (isLoading) return (<div>Loading...</div>)
   return (
     <Container component="main" maxWidth="lg">
-      <AppBar position="absolute" color="primary" className={classes.appBar}>
-        <Toolbar>
-          <Grid 
-            container
-            direction="row"
-            alignItems="center"
-            alignContent="flex-start"
-            className={classes.root}
-          >
-            <Grid item xs={8}>
-              <img src={logo} className={classes.toolbarIcon} alt="logo"/>
-            </Grid>
-            <Grid item xs={2}>
-              <Link 
-                href="" 
-                color="inherit"
-                variant="h6"
-                className={classes.toolBarLink} 
-                onClick={preventDefault}
-              >
-                天国
-              </Link>
-            </Grid>
-            <Grid item xs={2}>
-              <Link
-                href="" 
-                color="inherit"
-                variant="h6"
-                className={classes.toolBarLink} 
-                onClick={preventDefault}
-              >
-                地獄
-              </Link>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      
+      <Header />
       
       <Paper className={classes.paper}>
         <Grid container className={classes.root}>
           <Grid item xs={6}>
-            <p>
+            <Typography variant="subtitle1" className={classes.paragraph}>
               this is a story about my old pal toni kensa. he knows the freshest squids and
               he don't afraid of anything. one time i waited in line for 69 hours to get a
               pair of kensa hi-tops. stay off the hook don't get cooked!
-            </p>
+            </Typography>
           </Grid>
           <Grid item xs={6}>
             <p>
@@ -130,46 +67,26 @@ function App() {
         </Grid>
       </Paper>
       
-      <footer>
-        <Grid container className={classes.footer}>
-          <Grid item xs={4}>
-            <IconButton href="">
-              <LinkedInIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs={4}>
-            <IconButton href="">
-              <GitHubIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs={4}>
-            <IconButton href="">
-              <MailOutlineSharpIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs={12}>
-            <Copyright />
-          </Grid>
-        </Grid>  
-      </footer>
+      <Footer />
+      
     </Container>
   );
 }
 
 /*
 TODO:
-  1) make footer
-    -spacing
-    -fake links
-    -background color
+  0) refactor:
+    -prop-Types for each component?
+
+  1) footer:
+    -link behaviour
+    -background color? transparent
 
   2) Add content to main
-  3) heaven and hell links in the header
   4) routing in header
-  5) scaling
+  5) scaling... fluid containers or fixed? 
       -maxwidth
       -header links are closer to right hand
 */
-
 
 export default App;
