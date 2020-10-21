@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Link from '@material-ui/core/Link';
+import { Typography } from '@material-ui/core';
+//import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 
 import logo from './assets/kensa_logo.png';
 
@@ -19,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Header(props) {
+export default function Header() {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
+  //const preventDefault = (event) => event.preventDefault();
 
   return (
     <React.Fragment>
@@ -43,26 +45,22 @@ export default function Header(props) {
               xs={4}
             >
               <Grid item xs={4}>
-                <Link 
-                  href="" 
+                <Typography 
                   color="inherit"
                   variant="h5"
                   className={classes.toolBarLink} 
-                  onClick={preventDefault}
                 >
-                天
-                </Link>
+                  <Link to="/">天</Link>
+                </Typography>
               </Grid>
               <Grid item xs={4}>
-                <Link
-                  href="" 
+                <Typography 
                   color="inherit"
                   variant="h5"
                   className={classes.toolBarLink} 
-                  onClick={preventDefault}
                 >
-                  土
-                </Link>
+                  <Link to="/about">土</Link>
+                </Typography>
               </Grid>
             </Grid>
           </Grid>

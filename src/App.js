@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
-
   const classes = useStyles();
   /*
   useEffect(()=>{
@@ -45,30 +42,9 @@ function App() {
   //if (isLoading) return (<div>Loading...</div>)
   return (
     <Container component="main" maxWidth="lg">
-      
       <Header />
-      
-      <Paper className={classes.paper}>
-        <Grid container className={classes.root}>
-          <Grid item xs={6}>
-            <Typography variant="subtitle1" className={classes.paragraph}>
-              this is a story about my old pal toni kensa. he knows the freshest squids and
-              he don't afraid of anything. one time i waited in line for 69 hours to get a
-              pair of kensa hi-tops. stay off the hook don't get cooked!
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <p>
-              this is a story about my old pal toni kensa. he knows the freshest squids and
-              he don't afraid of anything. one time i waited in line for 69 hours to get a
-              pair of kensa hi-tops. stay off the hook don't get cooked!
-            </p>
-          </Grid>
-        </Grid>
-      </Paper>
-      
-      <Footer />
-      
+      <Main />
+      <Footer />    
     </Container>
   );
 }
